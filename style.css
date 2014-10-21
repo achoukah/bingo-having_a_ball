@@ -146,12 +146,18 @@ body {
   background: url(background.png) 50% 50% no-repeat;
   position: relative;
 }
+@font-face {
+  font-family: 'omnes';
+  src: url('omnes.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ url('omnes.ttf') format('truetype');
+  
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
 .logo {
   float: left;
   width: 320px;
   height: 272px;
   position: relative;
-  top: -2rem;
+  top: -2.4rem;
   left: 2.4rem;
   z-index: 100;
 }
@@ -164,14 +170,19 @@ body {
   width: 60%;
   margin: auto;
 }
-h1 {
-  font-size: 2.4rem;
-  font-weight: 900;
+h1,
+h2,
+a {
+  font-family: 'omnes', sans-serif;
   display: block;
   text-transform: uppercase;
-  line-height: .9;
   margin: .4rem auto;
-  letter-spacing: -1px;
+  text-shadow: 0 0 4px #000;
+  font-weight: 300;
+}
+h1 {
+  font-size: 2.4rem;
+  line-height: .9;
 }
 h1 span {
   text-transform: lowercase;
@@ -179,22 +190,32 @@ h1 span {
   position: relative;
   top: -0.6rem;
 }
+h2,
 a {
-  font-size: 2rem;
-  display: inline-block;
-  padding: .4rem 1rem;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+h2 strong,
+a strong {
+  color: #ffff79;
+}
+a {
   text-transform: uppercase;
   text-decoration: none;
-  color: #ffffff;
-  background: #a8271b;
+  color: #a8271b;
+  background: #ffff79;
   -webkit-transition: all .2s;
   transition: all .2s;
   border-radius: 4px;
-  -webkit-box-shadow: 0 0 10px #333333;
-  box-shadow: 0 0 10px #333333;
+  display: inline-block;
+  padding: .5rem 1rem 0rem;
+  position: relative;
+  top: -0.8rem;
+  line-height: 1.4;
 }
 a:hover {
-  background: #333333;
+  background: #a8271b;
+  color: #ffffff;
 }
 .player {
   width: 640px;
@@ -202,7 +223,7 @@ a:hover {
   margin: 2rem auto;
   position: relative;
   text-align: center;
-  top: -90px;
+  top: -100px;
   left: -20px;
   z-index: 1;
 }

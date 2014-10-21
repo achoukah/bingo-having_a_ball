@@ -12,6 +12,8 @@
     @plum-dk:   #88294a;
     @black:     #333;
 
+    @orange:    #ffff79;
+
 
 
     
@@ -104,12 +106,18 @@ body {
 
 // LOGO 
 
+  @font-face {
+    font-family: 'omnes';
+    src: url('omnes.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+         url('omnes.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }
+
   .logo {
     float: left;
     width: 320px;
     height: 272px;
     position: relative;
-    top: -2rem;
+    top: -2.4rem;
     left: 2.4rem;
     z-index: 100;
   }
@@ -126,18 +134,18 @@ body {
     margin: auto;
   }
 
-  h1 {
-    
+  h1, h2, a {
+    font-family: 'omnes', sans-serif;
+    display: block;
+    text-transform: uppercase;
+    margin: .4rem auto;
+    text-shadow: 0 0 4px #000;
+    font-weight: 300;
   }
 
   h1 {
     font-size: 2.4rem;
-    font-weight: 900;
-    display: block;
-    text-transform: uppercase;
     line-height: .9;
-    margin: .4rem auto;
-    letter-spacing: -1px;
 
     span {
       text-transform: lowercase;
@@ -148,34 +156,43 @@ body {
     }
   }
 
+  h2, a {
+    font-size: 1.6rem;
+    line-height: 1.1;
+
+    strong {
+      color: @orange;
+    }
+  }
+
   a {
-    font-size: 2rem;
-    display: inline-block;
-    padding: .4rem 1rem;
     text-transform: uppercase;
     text-decoration: none;
-    color: @white;
-    background: @cherry-dk;
+    color: @cherry-dk;
+    background: @orange;
     transition: all .2s;
     border-radius: 4px;
-    box-shadow: 0 0 10px @black;
-
+    display: inline-block;
+    padding: .5rem 1rem 0rem;
+    position: relative;
+    top: -.8rem;
+    line-height: 1.4;
   }
 
   a:hover {
-    background: @black;
+    background: @cherry-dk;
+    color: @white;
   }
 
 // VIDEO PLAYER 
 
   .player {
-    // background: @cherry-dk;
     width: 640px;
     height: 360px;
     margin: 2rem auto;
     position: relative;
     text-align: center;
-    top: -90px;
+    top: -100px;
     left: -20px;
     z-index: 1;
   }
