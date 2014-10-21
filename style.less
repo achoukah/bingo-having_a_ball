@@ -6,6 +6,11 @@
     @white:     #fff;
     @lime:      #bed024;
     @grass:     #008e49;
+    @cherry:    #e62653;
+    @cherry-dk: #a8271b;
+    @plum:      #b2306d;
+    @plum-dk:   #88294a;
+    @black:     #333;
 
 
 
@@ -25,20 +30,213 @@
 
     @unit:            1rem;
 
+// CSS RESET 
 
+
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed, 
+  figure, figcaption, footer, header, hgroup, 
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
 
 // SITE 
 
   html {
-  -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  background: @red;
+  font-family: Helvetica, Arial, sans-serif;
+  
 
   *, *:before, *:after {
     box-sizing: inherit;
   }
 }
+
+body {
+  margin: auto;
+}
+
+.container {
+  width: 1024px;
+  height: 768px;
+  margin: 2rem auto;
+  background: url(background.png) 50% 50% no-repeat;
+  position: relative;
+}
+
+// LOGO 
+
+  .logo {
+    float: left;
+    width: 320px;
+    height: 272px;
+    position: relative;
+    top: -2rem;
+    left: 2.4rem;
+    z-index: 100;
+  }
+
+
+// HEADER 
+  .supptext {
+    clear: both;
+    position: relative;
+    top: 170px;
+    color: @white;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+  }
+
+  h1 {
+    
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    display: block;
+    text-transform: uppercase;
+    line-height: .9;
+    margin: .4rem auto;
+    letter-spacing: -1px;
+
+    span {
+      text-transform: lowercase;
+      font-size: 60%;
+      position: relative;
+      top: -.6rem;
+
+    }
+  }
+
+  a {
+    font-size: 2rem;
+    display: inline-block;
+    padding: .4rem 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: @white;
+    background: @cherry-dk;
+    transition: all .2s;
+    border-radius: 4px;
+    box-shadow: 0 0 10px @black;
+
+  }
+
+  a:hover {
+    background: @black;
+  }
+
+// VIDEO PLAYER 
+
+  .player {
+    // background: @cherry-dk;
+    width: 640px;
+    height: 360px;
+    margin: 2rem auto;
+    position: relative;
+    text-align: center;
+    top: -90px;
+    left: -20px;
+    z-index: 1;
+  }
+
+  #ooyalaplayer {
+
+  }
+
+// MEDIA QUERIES 
+
+  
+
+
+  // iPhone (portrait and landscape)
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+
+    }
+
+  // iPhone (landscape)
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) 
+    and (orientation : landscape) {
+
+    }
+
+  // iPhone (portrait)
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) 
+    and (orientation : portrait) {
+
+    }
+
+  // iPads (portrait and landscape)
+    @media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px) {
+      
+    }
+
+  // iPads (landscape)
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape) { 
+
+    }
+
+  // iPads (portrait)
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait) {
+
+    }
+
+
+
 
 
 
