@@ -18,13 +18,6 @@
 
     
     
-
-
-  // FONTS 
-
-    @head-text:       'Oswald', sans-serif;
-    @body-text:       'Open Sans', sans-serif;
-    @alt-text:        'Old Standard TT', serif;
     
     
 
@@ -87,22 +80,22 @@
   font-family: Helvetica, Arial, sans-serif;
   
 
-  *, *:before, *:after {
-    box-sizing: inherit;
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
   }
-}
 
-body {
-  margin: auto;
-}
+  body {
+    margin: auto;
+  }
 
-.container {
-  width: 1024px;
-  height: 768px;
-  margin: 2rem auto;
-  background: url(background.png) 50% 50% no-repeat;
-  position: relative;
-}
+  .container {
+    width: 1024px;
+    height: 768px;
+    margin: 2rem auto;
+    background: url(background.png) 50% 50% no-repeat;
+    position: relative;
+  }
 
 // LOGO 
 
@@ -122,16 +115,11 @@ body {
     z-index: 100;
   }
 
-
 // HEADER 
+
   .supptext {
-    clear: both;
-    position: relative;
-    top: 150px;
-    color: @white;
-    text-align: center;
-    width: 60%;
-    margin: auto;
+
+    display: none;
   }
 
   h1, h2, a {
@@ -145,7 +133,6 @@ body {
 
   h1 {
     font-size: 2.4rem;
-    line-height: .9;
 
     span {
       text-transform: lowercase;
@@ -156,44 +143,73 @@ body {
     }
   }
 
-  h2, a {
-    font-size: 1.56rem;
-    line-height: 1.1;
-
-    strong {
-      color: @orange;
-    }
-  }
+  
 
   a {
     text-transform: uppercase;
     text-decoration: none;
-    color: @cherry-dk;
-    background: @white;
     transition: all .2s;
     border-radius: 4px;
     display: inline-block;
-    padding: .5rem 1rem 0rem;
     
-    line-height: 1.4;
     text-shadow: 0 0 0 transparent;
   }
 
   a:hover {
-    background: @cherry-dk;
-    color: @white;
+    
+  }
+
+
+// ACQUISITION STUFF
+
+  .cta {
+    width: 620px;
+    margin: auto;
+    text-align: center;
+    line-height: 1;
+
+    h1 {
+      color: @white;
+      text-shadow: none;
+    }
+
+
+    .join {
+      background: @grass;
+      color: @white;
+      text-shadow: 0 0 8px @black;
+      box-shadow: 0 0 4px @black;
+      display: block;
+      padding: .4em;
+      font-size: 3.2rem;
+
+      &:hover {
+        background: darken(@grass, 10%);
+        box-shadow: 0 0 16px @black;
+      }
+    }
+
+
+    .login {
+      background: @lime;
+      color: @white;
+      text-shadow: 0 0 8px @black;
+      display: block;
+      padding: 0;
+      font-size: 2.4rem;
+    }
   }
 
 // VIDEO PLAYER 
 
   .player {
-    width: 640px;
-    height: 360px;
-    margin: 2rem auto;
+    width: 620px;
+    height: 560px;
+    margin: 0 auto;
     position: relative;
     text-align: center;
-    top: -100px;
-    left: -20px;
+    top: -80px;
+    left: 0px;
     z-index: 1;
   }
 
