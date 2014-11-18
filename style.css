@@ -126,6 +126,10 @@ table {
   font-family: 'omnes';
   src: url('omnes.woff') format('woff'), url('omnes.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'icomoon';
+  src: url('icomoon.woff') format('woff');
+}
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -201,18 +205,25 @@ a {
   box-shadow: 0 4px 0 #333333;
 }
 .cta .join {
-  background: #008e49;
+  background: #333333;
   font-size: 3.2rem;
 }
 .cta .join:hover {
-  background: #00a856;
+  background: #404040;
+}
+.cta .join::before {
+  content: '\e601';
+  font-family: icomoon, sans-serif;
+  vertical-align: top;
+  font-size: 2.5rem;
+  margin-right: 1rem;
 }
 .cta .login {
-  background: #bed024;
+  background: #404040;
   font-size: 2.2rem;
 }
 .cta .login:hover {
-  background: #aaba20;
+  background: #262626;
 }
 .player {
   width: 620px;
@@ -282,7 +293,7 @@ footer a:hover {
   color: #cccccc;
 }
 footer .pushdown-container {
-  border: medium solid #cccccc;
+  border: thin solid #cccccc;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 3px;

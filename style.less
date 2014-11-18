@@ -11,6 +11,7 @@
     @plum:      #b2306d;
     @plum-dk:   #88294a;
     @black:     #333;
+    @black-dk:  #000;
     @grey:      #ccc;
     @grey-dk:   #999;
 
@@ -84,7 +85,12 @@
     font-family: 'omnes';
     src: url('omnes.woff') format('woff'), 
         url('omnes.ttf') format('truetype'); 
-    }
+  }
+
+  @font-face {
+    font-family: 'icomoon';
+    src: url('icomoon.woff') format('woff');
+  }
 
 // SITE 
 
@@ -175,20 +181,28 @@
 
 
     .join {
-      background: @grass;
+      background: @black;
       font-size: 3.2rem;
 
       &:hover {
-        background: lighten(@grass, 5%);
+        background: lighten(@black, 5%);
+      }
+
+      &::before {
+        content: '\e601';
+        font-family: icomoon, sans-serif;
+        vertical-align: top;
+        font-size: 2.5rem;
+        margin-right: 1rem;
       }
     }
 
     .login {
-      background: @lime;
+      background: lighten(@black, 5%);
       font-size: 2.2rem;
 
       &:hover {
-        background: darken(@lime, 5%);
+        background: darken(@black, 5%);
       }
     }
   }
@@ -262,13 +276,10 @@
 
   footer {
     width: 620px;
-    // height: 200px;
     background: @white;
     margin: 20px auto;
     padding: 20px;
     clear: both;
-    // position: relative;
-    // top: 20px;
     border-radius: @br;
     font-size: .8rem;
     color: @grey;
@@ -278,7 +289,6 @@
       font-family: Helvetica, Arial, sans-serif;
       text-transform: none;
       color: @grey-dk;
-      // text-decoration: underline;
 
       &:hover {
         color: @grey;
@@ -286,7 +296,7 @@
     }
     
     .pushdown-container {
-      border: medium solid @grey;
+      border: thin solid @grey;
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: @br;
