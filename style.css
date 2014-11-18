@@ -122,6 +122,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+@font-face {
+  font-family: 'omnes';
+  src: url('omnes.woff') format('woff'), url('omnes.ttf') format('truetype');
+}
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -145,12 +149,6 @@ body {
   margin: 2rem auto;
   background: url(background.png) 50% 50% no-repeat;
   position: relative;
-}
-@font-face {
-  font-family: 'omnes';
-  src: url('omnes.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ url('omnes.ttf') format('truetype');
-  
-  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 .logo {
   float: left;
@@ -179,7 +177,7 @@ a {
   text-decoration: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  border-radius: 4px;
+  border-radius: 3px;
   display: inline-block;
   text-shadow: 0 0 0 transparent;
 }
@@ -189,23 +187,18 @@ a {
   text-align: center;
   margin-top: 1.5rem;
 }
-.cta h1 {
-  color: #ffffff;
-  text-shadow: none;
-  font-size: 4rem;
-}
 .cta a {
   display: block;
-  text-shadow: 0 0 8px #333333;
-  -webkit-box-shadow: 0 0 4px #333333;
-  box-shadow: 0 0 4px #333333;
+  -webkit-box-shadow: 0 2px 0 #333333;
+  box-shadow: 0 2px 0 #333333;
   padding: .4em 0 .2rem;
   color: #ffffff;
   line-height: 1;
+  margin-bottom: 1rem;
 }
 .cta a:hover {
-  -webkit-box-shadow: 0 0 16px #333333;
-  box-shadow: 0 0 16px #333333;
+  -webkit-box-shadow: 0 4px 0 #333333;
+  box-shadow: 0 4px 0 #333333;
 }
 .cta .join {
   background: #008e49;
@@ -223,13 +216,31 @@ a {
 }
 .player {
   width: 620px;
-  height: 560px;
+  height: 768px;
   margin: 0 auto;
   position: relative;
   text-align: center;
   top: -60px;
   left: 0px;
   z-index: 1;
+  border-radius: 3px;
+}
+.player h1 {
+  color: #ffffff;
+  text-shadow: none;
+  font-size: 4rem;
+  line-height: .8;
+  margin: 1rem 0;
+}
+.player h1::after {
+  content: '*';
+  font-size: 50%;
+  vertical-align: super;
+  color: #a8271b;
+  margin-left: .4rem;
+}
+.player iframe {
+  cursor: pointer;
 }
 .feeds {
   width: 620px;
@@ -239,8 +250,9 @@ a {
   width: 300px;
   height: 250px;
   background: #a8271b;
-  border-radius: 4px;
+  border-radius: 3px;
   float: left;
+  margin-bottom: 20px;
 }
 .feeds .facebook {
   margin-right: 10px;
@@ -252,12 +264,92 @@ a {
 }
 footer {
   width: 620px;
-  height: 200px;
-  background: #a8271b;
+  background: #ffffff;
   margin: 20px auto;
+  padding: 20px;
   clear: both;
-  position: relative;
-  top: 20px;
-  border-radius: 4px;
+  border-radius: 3px;
+  font-size: .8rem;
+  color: #cccccc;
+  text-align: center;
+}
+footer a {
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: none;
+  color: #999999;
+}
+footer a:hover {
+  color: #cccccc;
+}
+footer .pushdown-container {
+  border: medium solid #cccccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+}
+footer a.more-trigger {
+  cursor: pointer;
+}
+footer a.more-trigger:hover {
+  color: #999999;
+}
+footer a.more-trigger img {
+  display: inline-block;
+  width: 12px;
+  margin-left: .3rem;
+}
+footer #more-container {
+  display: none;
+  border-top: thin solid #cccccc;
+  margin-top: 1rem;
+}
+footer #more-container strong {
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+footer img {
+  width: 580px;
+  opacity: .5;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+footer img:hover {
+  opacity: .8;
+}
+footer p {
+  padding: 20px 0;
+  line-height: 1.4;
+  display: block;
+}
+footer ol {
+  list-style-type: decimal;
+  text-align: left;
+}
+footer ol li {
+  padding: 0 0 .5rem .5rem;
+  list-style-position: inside;
+}
+footer ul.sub {
+  list-style-type: square;
+  padding: 0 0 0 1rem;
+}
+footer table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+footer table tr:nth-child(1) {
+  color: #999999;
+}
+footer table tr td:nth-child(1) {
+  color: #999999;
+}
+footer table strong {
+  font-size: .8rem !important;
+  text-align: left !important;
+}
+footer td {
+  padding: .5rem;
+  border: thin solid #cccccc;
 }
 /*# sourceMappingURL=style.css.map */

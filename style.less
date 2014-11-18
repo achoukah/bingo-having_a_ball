@@ -11,6 +11,8 @@
     @plum:      #b2306d;
     @plum-dk:   #88294a;
     @black:     #333;
+    @grey:      #ccc;
+    @grey-dk:   #999;
 
     @fb-blue:   #3b5998;
     @tw-blue:   #4099ff;
@@ -27,6 +29,7 @@
   // UNITS
 
     @unit:            1rem;
+    @br:              3px;
 
 // CSS RESET 
 
@@ -75,6 +78,14 @@
     border-spacing: 0;
   }
 
+// FONTS 
+
+  @font-face {
+    font-family: 'omnes';
+    src: url('omnes.woff') format('woff'), 
+        url('omnes.ttf') format('truetype'); 
+    }
+
 // SITE 
 
   html {
@@ -100,13 +111,7 @@
     position: relative;
   }
 
-// LOGO 
-
-  @font-face {
-    font-family: 'omnes';
-    src: url('omnes.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-         url('omnes.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
-  }
+// LOGO  
 
   .logo {
     float: left;
@@ -137,7 +142,7 @@
     text-transform: uppercase;
     text-decoration: none;
     transition: all .2s;
-    border-radius: 4px;
+    border-radius: @br;
     display: inline-block;
     text-shadow: 0 0 0 transparent;
   }
@@ -154,22 +159,17 @@
     text-align: center;
     margin-top: 1.5rem;
 
-    h1 {
-      color: @white;
-      text-shadow: none;
-      font-size: 4rem;
-    }
-
     a {
       display: block;
-      text-shadow: 0 0 8px @black;
-      box-shadow: 0 0 4px @black;
+      // text-shadow: 0 0 8px @lime;
+      box-shadow: 0 2px 0 @black;
       padding: .4em 0 .2rem;
       color: @white;
       line-height: 1;
+      margin-bottom: 1rem;
 
       &:hover {
-        box-shadow: 0 0 16px @black;
+        box-shadow: 0 4px 0 @black;
       }
     }
 
@@ -197,13 +197,35 @@
 
   .player {
     width: 620px;
-    height: 560px;
+    height: 768px;
     margin: 0 auto;
     position: relative;
     text-align: center;
     top: -60px;
     left: 0px;
     z-index: 1;
+    border-radius: @br;
+    // overflow: hidden;
+
+    h1 {
+      color: @white;
+      text-shadow: none;
+      font-size: 4rem;
+      line-height: .8;
+      margin: 1rem 0;
+
+      &::after {
+        content: '*';
+        font-size: 50%;
+        vertical-align: super;
+        color: @cherry-dk;
+        margin-left: .4rem;
+      }
+    }
+
+    iframe {
+      cursor: pointer;
+    }
   }
 
   #ooyalaplayer {
@@ -220,8 +242,9 @@
       width: 300px;
       height: 250px;
       background: @cherry-dk;
-      border-radius: 4px;
+      border-radius: @br;
       float: left;
+      margin-bottom: 20px;
     }
 
     .facebook {
@@ -239,13 +262,131 @@
 
   footer {
     width: 620px;
-    height: 200px;
-    background: @cherry-dk;
+    // height: 200px;
+    background: @white;
     margin: 20px auto;
+    padding: 20px;
     clear: both;
-    position: relative;
-    top: 20px;
-    border-radius: 4px;
+    // position: relative;
+    // top: 20px;
+    border-radius: @br;
+    font-size: .8rem;
+    color: @grey;
+    text-align: center;
+
+    a {
+      font-family: Helvetica, Arial, sans-serif;
+      text-transform: none;
+      color: @grey-dk;
+      // text-decoration: underline;
+
+      &:hover {
+        color: @grey;
+      }
+    }
+    
+    .pushdown-container {
+      border: medium solid @grey;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: @br;
+    }
+
+    a.more-trigger {
+      cursor: pointer;
+
+      &:hover {
+        color: @grey-dk;
+      }
+
+      img {
+        display: inline-block;
+        width: 12px;
+        margin-left: .3rem;
+      }
+
+    }
+
+    #more-container {
+      display: none;
+      border-top: thin solid @grey;
+      margin-top: 1rem;
+      
+
+
+      p {
+
+      }
+
+      strong {
+        font-weight: normal;
+        font-size: 1.1rem;
+      }
+    }
+
+    img {
+      width: 580px;
+      opacity: .5;
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    p {
+      padding: 20px 0;
+      line-height: 1.4;
+      display: block;
+    }
+
+    ol {
+      list-style-type: decimal;
+      text-align: left;
+      // padding: 0 0 0 0;
+
+      li {
+        padding: 0 0 .5rem .5rem;
+        list-style-position: inside;
+      }
+    }
+
+    ul.sub {
+      list-style-type: square;
+      padding: 0 0 0 1rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      tr {
+
+        &:nth-child(1) {
+          color: @grey-dk;
+        }
+
+        td {
+
+          &:nth-child(1) {
+            color: @grey-dk;
+          }
+        }
+      }
+
+
+      strong {
+        font-size: .8rem !important;
+        text-align: left !important;
+      }
+    }
+    
+    td {
+      padding: .5rem;
+      border: thin solid @grey;
+    }
+
   }
 
 // MEDIA QUERIES 
