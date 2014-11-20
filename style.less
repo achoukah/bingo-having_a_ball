@@ -401,53 +401,39 @@
 
 // MEDIA QUERIES 
 
-  
 
 
   // iPhone (portrait and landscape)
     @media only screen 
     and (min-device-width : 320px) 
     and (max-device-width : 480px) {
-
-    }
-
-  // iPhone (landscape)
-    @media only screen 
-    and (min-device-width : 320px) 
-    and (max-device-width : 480px) 
-    and (orientation : landscape) {
-
-    }
-
-  // iPhone (portrait)
-    @media only screen 
-    and (min-device-width : 320px) 
-    and (max-device-width : 480px) 
-    and (orientation : portrait) {
-
+      @import "mobile";
     }
 
   // iPads (portrait and landscape)
     @media only screen
     and (min-device-width : 768px)
     and (max-device-width : 1024px) {
-      
+      @import "tablet";
     }
 
-  // iPads (landscape)
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
-    and (orientation : landscape) { 
 
+
+
+    // DELETE THE BELOW 
+
+    // iPhone (portrait and landscape)
+    @media only screen 
+    and (min-width : 320px) 
+    and (max-width : 480px) {
+      @import "mobile";
     }
 
-  // iPads (portrait)
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
-    and (orientation : portrait) {
-
+  // iPads (portrait and landscape)
+    @media only screen
+    and (min-width : 768px)
+    and (max-width : 1024px) {
+      @import "tablet";
     }
 
 
